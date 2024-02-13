@@ -17,7 +17,8 @@ async function loginUser(credentials: UserProfile) {
       },
       body: JSON.stringify(credentials)
     })
-      .then(data => {return data.json()})
+      .then(data => {toast.success("Logged In"); return (data.json());})
+      .catch(e => {toast.error(e);})
    }
 
 export default function Signin() {
